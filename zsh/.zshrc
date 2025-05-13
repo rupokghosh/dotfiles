@@ -124,11 +124,14 @@ eval "$(rbenv init -)"
 
 #Git aliases
 alias gpom='git pull origin main'
+alias gpo='git pull origin'
 alias gco='git checkout'
 alias gc='git commit'
 alias ga='git add'
 alias gs='git status'
 alias gl='git log'
+alias gr='git restore'
+alias gcp='git cherry-pick'
 alias gps='git push'
 alias gpso='git push origin'
 
