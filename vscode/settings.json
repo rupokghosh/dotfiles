@@ -1,0 +1,42 @@
+{
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "workbench.settings.applyToAllProfiles": [],
+  "stylelint.enable": false,
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "files.autoSave": "afterDelay",
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "explorer.confirmDelete": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "discord.removeRemoteRepository": true,
+  "discord.removeLowerDetails": true,
+  "redhat.telemetry.enabled": true,
+  "editor.minimap.enabled": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.activityBar.location": "top",
+  "explorer.confirmDragAndDrop": false,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "terminal.integrated.cursorBlinking": true
+}
