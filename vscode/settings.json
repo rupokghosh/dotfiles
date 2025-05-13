@@ -9,7 +9,18 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-u>"],
+            "after": ["<C-u>", "z", "z"]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": ["<C-d>", "z", "z"]
+        }
+    ],
   "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
   "explorer.confirmDelete": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
