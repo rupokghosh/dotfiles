@@ -134,6 +134,7 @@ alias gr='git restore'
 alias gcp='git cherry-pick'
 alias gps='git push'
 alias gpso='git push origin'
+alias gpoh='git push origin HEAD'
 
 # Bash aliases
 alias c='clear'
