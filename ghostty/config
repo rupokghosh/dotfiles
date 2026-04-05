@@ -1,3 +1,7 @@
+# Cursor
+cursor-style = underline
+cursor-style-blink = true
+
 # Theme: zenwritten_dark
 background = 191919
 foreground = bbbbbb
