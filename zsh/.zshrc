@@ -187,3 +187,7 @@ alias ssm_prod_rw='aws ssm start-session \
   --parameters "{\"host\":[\"delphi-prod-aurora-cluster.cluster-c0t5xvscn3cc.us-east-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"],\"localPortNumber\":[\"5433\"]}" \
   --region us-east-1'
 
+# Force underline blinking cursor after prompt is fully rendered
+zle-line-init() { echo -ne '\e[3 q' }
+zle -N zle-line-init
+
