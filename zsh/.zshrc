@@ -1,3 +1,11 @@
+# rbenv setup
+export PATH="$HOME/.rbenv/bin:$PATH"
+if command -v rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init - zsh)"
+fi
+
+# Powerlevel10k instant prompt quiet
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -79,7 +87,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -135,6 +143,7 @@ alias gcp='git cherry-pick'
 alias gps='git push'
 alias gpso='git push origin'
 alias gpoh='git push origin HEAD'
+alias gfsync='git fetch upstream && git checkout main && git merge upstream/main && git push origin main'
 
 # Bash aliases
 alias c='clear'
@@ -142,3 +151,39 @@ alias ..='cd ..'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/Users/rupokghosh/.bun/_bun" ] && source "/Users/rupokghosh/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/Users/rupokghosh/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2025-10-06 22:34:33
+export PATH="$PATH:/Users/rupokghosh/.local/bin"
+
+# aws ssm aliases
+alias ssm_staging='aws ssm start-session \
+  --target i-08cb6f5a5d70d4451 \
+  --document-name AWS-StartPortForwardingSessionToRemoteHost \
+  --parameters "{\"host\":[\"delphi-staging-aurora-cluster.cluster-c0t5xvscn3cc.us-east-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"],\"localPortNumber\":[\"5434\"]}" \
+  --region us-east-1'
+alias ssm_prod_ro='aws ssm start-session \
+  --target i-0b152979cae2d2005 \
+  --document-name AWS-StartPortForwardingSessionToRemoteHost \
+  --parameters "{\"host\":[\"delphi-prod-aurora-cluster.cluster-ro-c0t5xvscn3cc.us-east-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"],\"localPortNumber\":[\"5436\"]}" \
+  --region us-east-1'
+alias ssm_prod_rw='aws ssm start-session \
+  --target i-0b152979cae2d2005 \
+  --document-name AWS-StartPortForwardingSessionToRemoteHost \
+  --parameters "{\"host\":[\"delphi-prod-aurora-cluster.cluster-c0t5xvscn3cc.us-east-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"],\"localPortNumber\":[\"5433\"]}" \
+  --region us-east-1'
+
