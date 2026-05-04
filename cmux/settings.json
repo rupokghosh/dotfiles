@@ -4,7 +4,7 @@
       "nextSurface": "cmd+opt+]",
       "previousSurface": "cmd+opt+[",
       "splitRight": "cmd+enter",
-      "splitDown": "cmd+shift+enter"
+      "splitDown": "cmd+opt+enter"
     }
   }
 }
