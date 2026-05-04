@@ -20,6 +20,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/node@20/bin:/usr/local/bin:$PATH"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
