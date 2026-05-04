@@ -55,6 +55,14 @@ else
   echo "==> Kitty already installed"
 fi
 
+# --- Rectangle ---
+if ! brew list --cask rectangle &>/dev/null 2>&1; then
+  echo "==> Installing Rectangle..."
+  brew install --cask --adopt rectangle
+else
+  echo "==> Rectangle already installed"
+fi
+
 # --- Oh My Zsh ---
 if [ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]; then
   echo "==> Installing Oh My Zsh..."
