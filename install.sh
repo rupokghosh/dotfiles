@@ -34,7 +34,7 @@ fi
 # --- Ghostty ---
 if ! brew list --cask ghostty &>/dev/null 2>&1; then
   echo "==> Installing Ghostty..."
-  brew install --cask ghostty
+  brew install --cask --adopt ghostty
 else
   echo "==> Ghostty already installed"
 fi
@@ -42,7 +42,7 @@ fi
 # --- cmux ---
 if ! brew list --cask cmux &>/dev/null 2>&1; then
   echo "==> Installing cmux..."
-  brew install --cask cmux
+  brew install --cask --adopt cmux
 else
   echo "==> cmux already installed"
 fi
@@ -50,7 +50,7 @@ fi
 # --- Kitty ---
 if ! brew list --cask kitty &>/dev/null 2>&1; then
   echo "==> Installing Kitty..."
-  brew install --cask kitty
+  brew install --cask --adopt kitty
 else
   echo "==> Kitty already installed"
 fi
