@@ -123,9 +123,12 @@ source $ZSH/oh-my-zsh.sh
 echo -e " \033[0;31m
     You make your own luck if you stay at it long enough.
 "
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+command -v go &>/dev/null && export PATH="$PATH:$(go env GOPATH)/bin"
+
+if [ -d "$HOME/.rbenv/bin" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
